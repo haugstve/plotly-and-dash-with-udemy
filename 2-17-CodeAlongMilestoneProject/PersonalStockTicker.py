@@ -26,6 +26,7 @@ app.layout = html.Div([
             ),
             html.Div(
                 'Search and add here',
+                id='ticker-picker',
                 style={'color':'black', 'border':'2px black solid', 'borderRadius':5,
                     'padding':0, }
             )
@@ -40,6 +41,7 @@ app.layout = html.Div([
             ),
             html.Div(
                 'Date picker goes here',
+                id='date-picker',
                 style={'color':'black', 'border':'2px black solid', 'borderRadius':5,
                     'padding':0, }
             )
@@ -53,7 +55,12 @@ app.layout = html.Div([
                     'padding':0, }
             ),
             html.Div(
-                'Button in this one',
+                html.Button(
+                    id='submit-button',
+                    n_clicks=0,
+                    children='Submit',
+                    style={'fontSize':28}
+                ),
                 style={'color':'black', 'border':'2px black solid', 'borderRadius':5,
                     'padding':0, }
             )
@@ -64,10 +71,19 @@ app.layout = html.Div([
               'padding':10, 'width':'80%'}),
     html.Div(
         'Graph goes here',
+        id='graph',
         style={'color':'green', 'border':'2px green solid', 'borderRadius':5,
            'padding':10, 'width':'80%'}
     )
 ])
+
+@app.callback(
+    Output('graph', 'children'),
+    [Input('submit-button', 'n_clicks')],
+    [State('ticker-picker', 'children'), State('date-picker', 'children')])
+def output(n_clicks, ticker, date):
+    return 'ticker:{}, date:{} clicks {}'.format(ticker, date, n_clicks)
+
 
 ## Start the server
 if __name__ == "__main__":
