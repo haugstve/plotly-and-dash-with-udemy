@@ -14,55 +14,54 @@ app = dash.Dash()
 
 app.layout = html.Div([
     html.Div(
-        'Some text here',
-        style={'color':'blue', 'border':'2px blue solid', 'borderRadius':5,
-           'padding':10, 'width':220}
+        html.H1('Stock ticker dashboard'),
+        style={'color':'blue', 'border':'2px blue solid', 'borderRadius':5, 'padding':10}
     ),
     html.Div([
         html.Div([
             html.Div(
-                'Some text here',
+                'Select stock symbols',
                 style={'color':'black', 'border':'2px black solid', 'borderRadius':5,
-                    'padding':10, }
+                    'padding':0, }
             ),
             html.Div(
-                'Some text here',
+                'Search and add here',
                 style={'color':'black', 'border':'2px black solid', 'borderRadius':5,
-                    'padding':10, }
+                    'padding':0, }
             )
         ], style={'color':'blue', 'border':'2px blue solid', 'borderRadius':5,
-                   'padding':10, 'width':'30%', 'display':'inline-block'}
+                   'padding':0, 'width':'30%', 'display':'inline-block'}
         ),
         html.Div([
             html.Div(
-                'Some text here',
+                'Select start and end dates',
                 style={'color':'black', 'border':'2px black solid', 'borderRadius':5,
-                    'padding':10, }
+                    'padding':0, }
             ),
             html.Div(
-                'Some text here',
+                'Date picker goes here',
                 style={'color':'black', 'border':'2px black solid', 'borderRadius':5,
-                    'padding':10, }
+                    'padding':0, }
             )
         ], style={'color':'blue', 'border':'2px blue solid', 'borderRadius':5,
-                   'padding':10, 'width':'30%', 'display':'inline-block'}
+                   'padding':0, 'width':'30%', 'display':'inline-block'}
         ),
         html.Div([
             html.Div(
-                'Some text here',
+                '',
                 style={'color':'black', 'border':'2px black solid', 'borderRadius':5,
-                    'padding':10, }
+                    'padding':0, }
             ),
             html.Div(
-                'Some text here',
+                'Button in this one',
                 style={'color':'black', 'border':'2px black solid', 'borderRadius':5,
-                    'padding':10, }
+                    'padding':0, }
             )
         ], style={'color':'blue', 'border':'2px blue solid', 'borderRadius':5,
-                   'padding':10, 'display':'inline-block'}
+                   'padding':0, 'display':'inline-block'}
         )
     ], style={'color':'red', 'border':'2px red solid', 'borderRadius':5,
-              'padding':0, 'width':'80%'}),
+              'padding':10, 'width':'80%'}),
     html.Div(
         'Graph goes here',
         style={'color':'green', 'border':'2px green solid', 'borderRadius':5,
